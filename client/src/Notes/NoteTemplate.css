@@ -1,0 +1,38 @@
+.note-template {
+    width: 10rem;
+    min-height: 15rem;
+    max-height: 20rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+
+.note-template-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-template-date {
+    font-size: x-small;
+    font-weight: lighter;
+}
+
+.note-template-body>p,hr {
+    margin-top: 0;
+}
+
+.note-template-body-heading {
+    margin: 0;
+    font-size: 18px;
+}
+.note-template-body-heading > span {
+    margin-left: .5rem;
+    font-size: 10px;
+    padding: 2px;
+    background-color: var(--primary);
+    border-radius: 4px;
+}

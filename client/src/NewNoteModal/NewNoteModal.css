@@ -1,0 +1,43 @@
+.new-note-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-note-modal-form {
+    border-radius: 0.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    background-color: antiquewhite;
+}
+
+.new-note-modal-form-input {
+    margin-left: 1rem;
+    border: none;
+    height: 1.5rem;
+    font-size: medium;
+    border-radius: 0.25rem;
+}
+.new-note-modal-buttons{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 1rem;
+}
+.new-note-model-button{
+    flex-grow: 1;
+    background-color: #E54B4B;
+    border: none;
+    height: 2rem;
+    font-size: medium;
+    border-radius: 0.25rem;
+}
+
+

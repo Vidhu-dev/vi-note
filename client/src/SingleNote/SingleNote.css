@@ -1,0 +1,77 @@
+.single-note {
+  display: flex;
+  column-gap: 2rem;
+  margin-right: 1rem;
+}
+
+.single-note-container {
+  flex-grow: 1;
+  row-gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.single-note-header > h1 {
+  margin: 0;
+}
+
+.single-note-header {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-note-metadata {
+  display: flex;
+  column-gap: 2rem;
+  margin-top: -1rem;
+}
+
+.single-note-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.single-note-headings {
+  display: flex;
+  gap: 1rem;
+}
+
+
+textarea {
+  resize: none;
+  border: none;
+  outline: none;
+}
+
+.single-note-input {
+  flex-grow: 1;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  border: var(--primary) 1px solid;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+
+.single-note-heading {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--primary);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.single-note-heading-active {
+  background-color: var(--redish);
+}
+
+.single-note-output {
+  flex-grow: 1;
+  font-family: Verdana, 'Trebuchet MS', Tahoma, sans-serif;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0px;
+}

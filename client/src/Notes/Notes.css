@@ -1,0 +1,47 @@
+.note>p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0 0 0;
+
+}
+
+
+
+.note-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1rem;
+}
+
+.note-page {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.note-container {
+    flex-grow: 1;
+}
+
+#add-new {
+    background-color: var(--primary);
+    border: 2px dashed;
+    align-self: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#add {
+    font-size: 2rem;
+}
+
+.note-gallery-add-note{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

@@ -1,0 +1,24 @@
+.notebook>p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0 0 0;
+
+}
+
+
+
+.notebook-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1rem;
+}
+
+.notebook-page {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.notebook-container {
+    flex-grow: 1;
+}
+

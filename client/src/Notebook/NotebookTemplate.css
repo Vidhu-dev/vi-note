@@ -1,0 +1,40 @@
+.notebook-template {
+    width: 10rem;
+    height: 6rem;
+    padding: 0.5rem 1rem ;
+    border: 2px solid;
+    border-radius: 1rem;
+    background-color: var(--primary);
+}
+
+.notebook-template-line{
+    height: 0.75rem;
+    width: 12rem;
+    position: relative;
+    left: -1rem;
+    background-color: var(--dark);
+}
+
+.notebook-template-icon {
+    font-size: 1.5rem;
+    position: relative;
+    top: -1rem;
+    left: 9rem;
+}
+
+.notebook-template-top {
+    padding-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notebook-template-top>p{
+    margin: 0;
+    font-weight: bold;
+}
+.notebook-template-date{
+    font-size: x-small;
+    margin-top: .5rem;
+}
+

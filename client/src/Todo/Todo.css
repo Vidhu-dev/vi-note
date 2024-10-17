@@ -1,0 +1,26 @@
+.todo {
+    margin: 2rem;
+    padding: 1rem;
+    max-width: 20rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    border: 2px solid var(--dark);
+    transition: 0.4s;
+}
+
+.todo>input,
+.todo-item {
+    background-color: var(--primary);
+    border: none;
+    margin: 0.25rem;
+    border-radius: 2px;
+    padding: 6px;
+    font-size: medium;
+}
+
+.todo>input {
+    margin-left: 24px;
+}
