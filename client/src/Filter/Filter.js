@@ -1,38 +1,27 @@
 import React, { useState } from "react";
 import "./Filter.css";
+
 function Filter() {
-  const intialState = {
-    all: "filter",
-    todays: "",
-    week: "",
-    month: "",
-  };
-  const [filter, setFilter] = useState(intialState);
-  const handelFilter = (e) => {
+  const [filter, setFilter] = useState("all");
+
+  const handleFilter = (e) => {
     const { className } = e.target;
-    console.log(className);
-    var temp = {
-      all: "",
-      todays: "",
-      week: "",
-      month: "",
-    };
-    setFilter({ ...temp, [className]: "filter" });
+    setFilter(className);
   };
 
   return (
     <div>
       <ul className="filter">
-        <li className="todays" onClick={handelFilter} id={filter.todays}>
+        <li className="todays" onClick={handleFilter} id={filter === "todays" ? "filter" : ""}>
           Todays
         </li>
-        <li className="week" onClick={handelFilter} id={filter.week}>
+        <li className="week" onClick={handleFilter} id={filter === "week" ? "filter" : ""}>
           This week
         </li>
-        <li className="month" onClick={handelFilter} id={filter.month}>
+        <li className="month" onClick={handleFilter} id={filter === "month" ? "filter" : ""}>
           This month
         </li>
-        <li className="all" onClick={handelFilter} id={filter.all}>
+        <li className="all" onClick={handleFilter} id={filter === "all" ? "filter" : ""}>
           All
         </li>
       </ul>

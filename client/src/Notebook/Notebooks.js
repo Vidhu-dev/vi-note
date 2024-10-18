@@ -14,7 +14,7 @@ function Notebook() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getNotebooks());
-  }, []);
+  }, [dispatch]);
 
 
   if (loading) {

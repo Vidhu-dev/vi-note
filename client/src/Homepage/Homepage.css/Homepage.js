@@ -9,12 +9,7 @@ import { useSelector } from 'react-redux'
 function Homepage() {
   const user = useSelector((state) => state.auth.user)
 
-  // if (!user)
-  //   return (
-  //     <div className="loader">
-  //       <ClipLoader size={100} aria-label="Loading Spinner" color='#EA2E00'/>
-  //     </div>
-  //   )
+
   return (
     <div className="homepage">
       <Sidebar />

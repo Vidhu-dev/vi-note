@@ -2,6 +2,7 @@
   display: flex;
   column-gap: 2rem;
   margin-right: 1rem;
+  transition: all 0.3s ease;
 }
 
 .single-note-container {
@@ -35,8 +36,8 @@
 .single-note-headings {
   display: flex;
   gap: 1rem;
+  transition: transform 0.3s ease;
 }
-
 
 textarea {
   resize: none;
@@ -52,19 +53,25 @@ textarea {
   border: var(--primary) 1px solid;
   border-radius: 0.25rem;
   padding: 0.25rem;
+  transition: border-color 0.3s ease;
 }
 
 .single-note-heading {
+  cursor: pointer;
   font-size: 1rem;
   padding: 0.5rem;
   border-radius: 0.25rem;
   background-color: var(--primary);
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .single-note-heading-active {
-  background-color: var(--redish);
+  background-color: var(--dark);
+  color: var(--primary);
+  transform: scale(1.05);
+  cursor: default;
 }
 
 .single-note-output {
@@ -74,4 +81,14 @@ textarea {
 
 textarea::-webkit-scrollbar {
   width: 0px;
+}
+
+.sync {
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.sync:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
 }

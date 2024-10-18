@@ -1,14 +1,11 @@
 import styles from './Sidebar.module.css'
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { IonIcon } from '@ionic/react'
 import {
   home,
   happy,
   clipboard,
-  checkbox,
   journal,
-  archive,
-  trashBin,
   logIn,
   logOut,
 } from 'ionicons/icons'
@@ -22,12 +19,6 @@ function Sidebar() {
   const [isLogedIn, setIsLoggedIn] = useState(user)
   const dispatch = useDispatch()
   const nav = useNavigate()
-  // useEffect(() => {
-  //   if (!user) {
-  //     dispatch(setLogout())
-  //     setIsLoggedIn(!isLogedIn)
-  //   }
-  // }, [])
 
   const handleLogout = () => {
     dispatch(setLogout())
@@ -46,7 +37,7 @@ function Sidebar() {
           icon={isLogedIn ? happy : logIn}
         />
       ),
-      link: '/login',
+      link: isLogedIn ? '/' : '/login',
     },
     {
       text: 'Home',
@@ -83,31 +74,7 @@ function Sidebar() {
         />
       ),
       link: '/notebooks',
-    },
-    {
-      text: 'Archive',
-      icon: (
-        <IonIcon
-          className={
-            isExpanded ? styles.nav_link_icons : styles.nav_link_icons_nx
-          }
-          icon={archive}
-        />
-      ),
-      link: '/archive',
-    },
-    {
-      text: 'Bin',
-      icon: (
-        <IonIcon
-          className={
-            isExpanded ? styles.nav_link_icons : styles.nav_link_icons_nx
-          }
-          icon={trashBin}
-        />
-      ),
-      link: '/bin',
-    },
+    }
   ]
 
   return (

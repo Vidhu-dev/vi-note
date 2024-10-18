@@ -14,10 +14,9 @@ import SingleNotebook from './Notebook/SingleNotebook'
 import NewNoteModal from './NewNoteModal/NewNoteModal'
 import { Toaster } from 'react-hot-toast'
 import RequireAuth from './RequireAuth.js'
-
+import UpdateNotebookModal from './NewNotebookModal/UpdateNotebookModal.js'
 
 function App() {
-
   return (
     <div className="App">
       <div>
@@ -55,6 +54,14 @@ function App() {
             element={
               <RequireAuth>
                 <NewNotebookModal />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/editNotebook/:notebookId"
+            element={
+              <RequireAuth>
+                <UpdateNotebookModal />
               </RequireAuth>
             }
           />

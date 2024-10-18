@@ -12,6 +12,8 @@ import remarkGfm from 'remark-gfm'
 import toast from 'react-hot-toast'
 import rehypeHighlight from 'rehype-highlight'
 import rehypeStarryNight from 'rehype-starry-night'
+import { IonIcon } from '@ionic/react'
+import { syncCircle, syncOutline } from 'ionicons/icons'
 
 function SingleNote() {
   const [isPreview, setIsPreview] = useState(false)
@@ -60,7 +62,10 @@ function SingleNote() {
       <div className="single-note-container">
         <div className="single-note-header">
           <h1>{note.title}</h1>
-          <button onClick={handelSubmit}>Sync</button>
+
+          <button onClick={handelSubmit} className='sync'>
+            <IonIcon icon={syncCircle} size="large" />
+          </button>
         </div>
         <div className="single-note-metadata">
           <p>{new Date(note.createdAt).toLocaleDateString()}</p>

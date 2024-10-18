@@ -1,61 +1,73 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "../NewNoteModal/NewNoteModal";
-import { useDispatch, useSelector } from "react-redux";
-import { createNotebook } from "../Redux/Features/notebookSlice";
-import toast from "react-hot-toast";
-const initialState = {
-  title: "",
-  description: "",
-  color: "",
-  createdAt: "",
-};
-function NewNotebookModal() {
-  const colors = [
-    {
-      name: "red",
-      value: "#EA5455",
-    },
-    {
-      name: "yellow",
-      value: "#F0EB8D",
-    },
-    {
-      name: "blue",
-      value: "#95BDFF",
-    },
-    {
-      name: "sky",
-      value: "#98DFD6",
-    },
-    {
-      name: "gray",
-      value: "#4E6E81",
-    },
-  ];
-  const { error, loading } = useSelector((state) => ({ ...state.notebook }));
+import React, { useState, useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import '../NewNoteModal/NewNoteModal'
+import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-hot-toast'
+import { createNotebook, updateNotebook } from '../Redux/Features/notebookSlice'
+import { getNotebook } from '../Redux/api'
+
+const colors = [
+  {
+    name: 'red',
+    value: '#EA5455',
+  },
+  {
+    name: 'yellow',
+    value: '#F0EB8D',
+  },
+  {
+    name: 'blue',
+    value: '#95BDFF',
+  },
+  {
+    name: 'sky',
+    value: '#98DFD6',
+  },
+  {
+    name: 'gray',
+    value: '#4E6E81',
+  },
+]
+function NewNotebookModal({
+  operation = 'create',
+  initialState = {
+    title: '',
+    description: '',
+    color: '',
+    createdAt: '',
+    _id: '',
+  },
+}) {
+  const { error } = useSelector((state) => ({ ...state.notebook }))
+  console.log(initialState)
   useEffect(() => {
-    error && toast.error(error);
-  }, [error]);
-  const { user } = useSelector((state) => ({ ...state.auth }));
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [notebookData, setNotebookData] = useState(initialState);
-  const { title, description, color } = notebookData;
+    error && toast.error(error)
+  }, [error])
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const [notebookData, setNotebookData] = useState(initialState)
+  const { title, description, color } = notebookData
   const onInputChange = (e) => {
-    const { name, value } = e.target;
-    setNotebookData({ ...notebookData, [name]: value });
-  };
+    const { name, value } = e.target
+    setNotebookData({ ...notebookData, [name]: value })
+  }
+
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (title && description) {
-      dispatch(createNotebook({ notebookData, navigate }));
+      if (operation === 'create') {
+        dispatch(createNotebook({ notebookData, navigate }))
+      } else {
+        dispatch(updateNotebook({ notebookData, navigate }))
+      }
     }
-  };
+  }
   const handelCancel = (e) => {
-    e.preventDefault();
-    navigate("/");
-  };
+    e.preventDefault()
+    navigate('/')
+  }
+
   return (
     <div className="new-note-modal">
       <form className="new-note-modal-form" action="">
@@ -84,7 +96,7 @@ function NewNotebookModal() {
         <label htmlFor="color">
           Color
           <select
-            onChange= {onInputChange}
+            onChange={onInputChange}
             className="new-note-modal-form-input"
             value={color}
             name="color"
@@ -97,7 +109,7 @@ function NewNotebookModal() {
                 <option key={i} value={color.value}>
                   {color.name}
                 </option>
-              );
+              )
             })}
           </select>
         </label>
@@ -112,12 +124,12 @@ function NewNotebookModal() {
             onClick={handleSubmit}
             className="new-note-model-button"
             type="button"
-            value="Create"
+            value={`${operation === 'create' ? 'Create' : 'Update'}`}
           />
         </div>
       </form>
     </div>
-  );
+  )
 }
 
-export default NewNotebookModal;
+export default NewNotebookModal
